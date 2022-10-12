@@ -7,7 +7,10 @@
     "build": "node ./esbuild.js",
     "version": "npm run build && git add public/manifest.json",
     "ts-check": "tsc --noEmit",
-    "test": "npm run ts-check"
+    "test": "npm run ts-check",
+    "start": "npm run start:backend && npm run start:chrome",
+    "start:backend": "node-dev ./start-admin-server.js & npm run build",
+    "start:chrome": "google-chrome --load-extension=\"./public\""
   },
   "repository": {
     "type": "git",
