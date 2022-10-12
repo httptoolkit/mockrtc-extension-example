@@ -1,0 +1,26 @@
+{
+    "name": "MockRTC",
+    "description": "A example browser extension to intercept traffic with MockRTC",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "build/background.js"
+    },
+    "permissions": [
+        "scripting",
+        "proxy"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "build/injected-script.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}
